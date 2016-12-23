@@ -9,6 +9,7 @@ module.exports = {
 			var boxWidth = 200;
 			var boxHeight = 180;
 
+
 			var calcQuantaityWidth = function(){
 				return Math.floor(windowWidth / boxWidth)
 			}
@@ -31,8 +32,8 @@ module.exports = {
 
 			function putImg(){
 				
-				
 				var el = document.getElementsByClassName('new-box');
+				el[7].innerHTML = '<video src="images/zekas.mp4 " autoplay="" loop=""></video>'
 				for (var i = 1,k = 1; i < collection + 1; i++ ) {
 					k++
 					if(k === 18){
@@ -44,6 +45,7 @@ module.exports = {
 					}
 					
 				}
+				
 			}
 
 			putImg()
