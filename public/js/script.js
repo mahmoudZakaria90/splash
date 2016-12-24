@@ -33,13 +33,17 @@ module.exports = {
 			function putImg(){
 				
 				var el = document.getElementsByClassName('new-box');
-				el[7].innerHTML = '<video src="images/zekas.mp4 " autoplay="" loop=""></video>'
+				if(el[7]){
+					el[7].innerHTML = '<video src="images/zekas.mp4 " autoplay="" loop=""></video>'
+				}
 				for (var i = 1,k = 1; i < collection + 1; i++ ) {
 					k++
 					if(k === 18){
 						k = 1
 					}
-					el[i].style.backgroundImage = "url(images/img"+k+".jpg)"
+					if(el[i]){
+						el[i].style.backgroundImage = "url(images/img"+k+".jpg)"
+					}
 					if(i % 4 === 0){
 						el[i].style.backgroundImage = 'none'
 					}
