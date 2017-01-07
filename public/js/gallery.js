@@ -11,8 +11,8 @@ function gallery(){
 	  document.body.appendChild(mainWrapper)
 
 	  var boxQuan = 500
-	  var boxPerRow = 20
-	  var speed = 3
+	  var boxPerRow = 10
+	  var speed = 8
 	
 
 	  for (var i = 1, k = 1 ; i < boxQuan; i++) {
@@ -27,16 +27,18 @@ function gallery(){
 	    newBox.style.backgroundImage = "url(images/img"+k+".jpg)"
 	    mainWrapper.appendChild(newBox)
 	    newBox.style.width = newBoxWidth + 'px'
+	    newBox.style.height = newBoxWidth + 'px'
 	    newBox.style.transform = "translateZ("+randomTranslateZ+"px)"
-	
+		
 	  }
+	  document.getElementsByClassName('box')[7].innerHTML = '<video src="images/zekas.mp4 " autoplay="" loop=""></video>'
 	 
 	    window.addEventListener('mousewheel',function(e){
 	      var x = document.getElementById('main-wrap')
 	      var xStyle = window.getComputedStyle(x, null).getPropertyValue('perspective')
 	      var parsingXStyle = xStyle.substring(0,4) 
-	      x.setAttribute('style','perspective: ' + (parseInt(parsingXStyle) - e.wheelDelta  * speed ) + 'px')
-
+	      x.setAttribute('style','perspective: ' + (parseInt(parsingXStyle) + ( e.wheelDelta  * speed )) + 'px')
+	      console.log(e.wheelDelta)
 	    }, false)  
 
 	    //FireFox
