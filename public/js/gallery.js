@@ -37,8 +37,10 @@ function gallery(){
 	function callback(e){
 		var x = document.getElementById('main-wrap')
 		var xStyle = window.getComputedStyle(x, null).getPropertyValue('perspective')
-		var parsingXStyle = xStyle.substring(0,4) 
-		x.setAttribute('style','perspective: ' + (parseInt(parsingXStyle) + ( e.wheelDelta  * speed )) + 'px')
+		var parsingXStyle = xStyle.substring(0,4);
+		x.setAttribute('style','-webkit-perspective: ' + (parseInt(parsingXStyle) + ( e.wheelDelta  * speed )) + 'px');
+		x.setAttribute('style','-moz-perspective: ' + (parseInt(parsingXStyle) + ( e.wheelDelta  * speed )) + 'px');
+		x.setAttribute('style','perspective: ' + (parseInt(parsingXStyle) + ( e.wheelDelta  * speed )) + 'px');
 		console.log(e.wheelDelta)
 	}
 	
