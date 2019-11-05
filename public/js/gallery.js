@@ -41,6 +41,7 @@ function gallery(){
 		x.setAttribute('style','-webkit-perspective: ' + (parseInt(parsingXStyle) + ( e.wheelDelta  * speed )) + 'px');
 		x.setAttribute('style','-moz-perspective: ' + (parseInt(parsingXStyle) + ( e.wheelDelta  * speed )) + 'px');
 		x.setAttribute('style','perspective: ' + (parseInt(parsingXStyle) + ( e.wheelDelta  * speed )) + 'px');
+		document.querySelector('video').play();
 		console.log(e.wheelDelta)
 	}
 	
